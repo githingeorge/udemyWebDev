@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h3>Example #1</h3>
+        <ul>
+        {{ range .}}   
+        <li>{{ . }}</li>
+        {{ end }}
+        </ul>
+
+        <h3>Example #2</h3>
+        {{if .}}
+        Example #2 - {{ . }}
+        {{end}}
+
+        <h3>Example #3</h3>
+        {{range .}}
+        {{if .Name}}
+           Example #3 - {{ .Name }}
+        {{end}}
+        {{end}}
+
+        <h3>Example #4</h3>
+        {{range .}}
+        {{if and .Name .Admin}}
+           Example #4 - {{ .Name }}
+        {{end}}
+        {{end}}
+
+        <h3>Example #5</h3>
+        {{range .}}
+            {{ and .Name .Admin}}
+        {{end}}
+    </body>
+</html>

@@ -1,0 +1,55 @@
+Skip to content
+Features Business Explore Marketplace Pricing
+This repository
+Search
+Sign in or Sign up
+ Watch 56  Star 424  Fork 157 GoesToEleven/golang-web-dev
+ Code  Issues 4  Pull requests 2  Projects 0 Insights 
+Branch: master Find file Copy pathgolang-web-dev/041_ajax/01/index.html
+abbe53a  on May 4
+@GoesToEleven GoesToEleven you're doing great
+1 contributor
+RawBlameHistory     
+50 lines (40 sloc)  968 Bytes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 5vw;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Make a request</h1>
+
+<script>
+    document.querySelector('h1').onclick = makeRequest;
+    function makeRequest() {
+        // create a  XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        // open the request
+        xhr.open('GET', 'test.html');
+        // handles the response
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
+                alert(xhr.responseText);
+            }
+        };
+        // send the request
+        xhr.send();
+    }
+</script>
+</body>
+</html>
